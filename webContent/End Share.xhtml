@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui" >
+<h1>Survey End</h1>
+	
+		<h:form id="form">
+		<h:messages></h:messages>
+		<h:panelGrid>
+		<h:dataTable var="p" value="#{end.pickList }" border="30" >
+		<h:column>
+		<f:facet name = "header">Question_ID</f:facet>  
+		<h:outputText value="#{p.id_Question}"/>  				
+      
+		</h:column>
+		
+		<h:column>
+		<f:facet name = "header">Question</f:facet>    				
+     <h:outputText value="#{p.question}"/>
+		</h:column>
+		
+		</h:dataTable>
+		
+		
+	</h:panelGrid >
+	
+	<h:panelGrid columns="2">
+	<h:outputLabel for="p" value="Question Id to End sharing:"/>
+		<h:inputText id="p" value="#{end.pickedQuestion}" required="true" requiredMessage="Please Pick question ID To Share!"/>
+		<br/>
+		<h:commandButton value="End Share" action="#{end.end()}"/>
+</h:panelGrid>
+<br/>
+<h:button value="Back" outcome="ProfPage.faces"/>
+
+		</h:form>
+
+	
+</ui:composition>

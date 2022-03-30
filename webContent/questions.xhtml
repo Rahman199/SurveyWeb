@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui" >
+<h1>Prof Page</h1>
+	
+		<h:form id="form">
+		<h:messages id="msgs" />
+		
+	<h:panelGrid border="30" columns="3">
+	<h:outputLabel for="Question" value="Question is:"/>
+<h:inputText value="#{question.question}" id="Question" required="true" requiredMessage="Please Add A Question!"/>
+<h:message for="Question"></h:message>
+
+<h:outputLabel for="A" value="Answer A:"/>
+<h:inputText value="#{question.answer_A}" id="A" required="true" requiredMessage="Please Add Answer A!"/>
+<h:message for="A"></h:message>
+
+<h:outputLabel for="B" value="Answer B:"/>
+<h:inputText value="#{question.answer_B}" id="B" required="true" requiredMessage="Please Add Answer B!"/>
+<h:message for="B"></h:message>
+
+<h:outputLabel for="C" value="Answer C:"/>
+<h:inputText value="#{question.answer_C}" id="C" required="true" requiredMessage="Please Add Answer C!"/>
+<h:message for="C"></h:message>
+
+<h:outputLabel for="D" value="Answer D:"/>
+<h:inputText value="#{question.answer_D}" id="D" required="true" requiredMessage="Please Add Answer D!"/>
+<h:message for="D"></h:message>
+
+<h:outputLabel for="correct" value="correct Answer:" required="true" requiredMessage="Please Add The Correct Answer!"/>
+<h:inputText value="#{question.corrctAnswer}" id="correct"/>
+<h:message for="vorrect"></h:message>
+
+			<h:commandButton action="#{question.saveQuestion()}" value="Save"></h:commandButton>
+	
+	
+	</h:panelGrid>
+	
+<h:button value="Back" outcome="ProfPage.faces"/>
+		</h:form>
+
+	
+</ui:composition>

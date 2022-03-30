@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui" >
+<h1>students Page</h1>
+	
+		<h:form id="form">
+		<h:messages id="msgs" />
+		
+	<h:panelGrid border="30" columns="2" >
+	<h:dataTable var="t" value="#{surveyB.questionsList}" border="30">
+	<h:column>
+	<f:facet name="header">Question</f:facet>
+	<h:outputText value="#{t.question}"></h:outputText>
+	
+	</h:column>
+	
+	<h:column>
+	<f:facet name="header">Answer_A</f:facet>
+	<h:selectOneRadio value="#{surveyB.answer_A}">
+	<f:selectItem itemLabel="#{t.answer_A}" itemValue="#{t.answer_A}"/>
+	</h:selectOneRadio>
+	</h:column>
+	<h:column>
+	<f:facet name="header">Answer_B</f:facet>
+	<h:selectOneRadio value="#{surveyB.answer_B}">
+	<f:selectItem itemLabel="#{t.answer_B}" itemValue="#{t.answer_B}"/>
+	</h:selectOneRadio>
+	</h:column>
+	<h:column>
+	<f:facet name="header">Answer_C</f:facet>
+	<h:selectOneRadio value="#{surveyB.answer_C}">
+	<f:selectItem itemLabel="#{t.answer_C}" itemValue="#{t.answer_C}"/>
+	</h:selectOneRadio>
+	</h:column>
+	<h:column>
+	<f:facet name="header">Answer_D</f:facet>
+<h:selectOneRadio value="#{surveyB.answer_D}">
+	<f:selectItem itemLabel="#{t.answer_D}" itemValue="#{t.answer_D}"/>
+	<f:ajax event="valueChange" listener="#{surveyB.save()}" execute="@this"/>
+	</h:selectOneRadio>	</h:column>
+	
+	
+	</h:dataTable>
+
+			<h:commandButton action="#{login.loginn()}" value="Login"></h:commandButton>
+	
+	
+	</h:panelGrid>
+	
+	
+	
+	
+	
+	
+		
+		
+		
+
+		</h:form>
+
+	
+</ui:composition>

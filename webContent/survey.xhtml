@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui" >
+<h1>students Page</h1>
+	
+		<h:form id="form">
+		<h:messages id="msgs" />
+		
+	<h:panelGrid  columns="1" >
+	<h:outputText value="#{surveyB.question}"/>
+	<h:selectOneRadio value="#{surveyB.correct_Answer}">
+	<f:selectItem itemLabel="A:#{surveyB.answer_A}" itemValue="#{surveyB.answer_A}"/>
+	<f:selectItem itemLabel="B:#{surveyB.answer_B}" itemValue="#{surveyB.answer_B}"/>
+	<f:selectItem itemLabel="C:#{surveyB.answer_C}" itemValue="#{surveyB.answer_C}"/>
+	<f:selectItem itemLabel="D:#{surveyB.answer_D}" itemValue="#{surveyB.answer_D}"/>
+	
+	</h:selectOneRadio>
+
+	</h:panelGrid>
+
+	<h:commandButton action="#{surveyB.next()}" value="next Question" disabled="#{surveyB.disable}"></h:commandButton>
+	
+	<br/>
+		<h:button value="Back" outcome="StudentPage.faces"/>
+		
+		
+
+		</h:form>
+
+	
+</ui:composition>
