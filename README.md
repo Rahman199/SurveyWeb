@@ -1,5 +1,5 @@
 What is survey tool?
-• Poll Tool is a full-featured poll system for creating polls.
+• Survey tool are online tools that can be used to electronically collect answers or responses to questions from student.
 • With the help of online surveys, professors can generate valuable feedback and answers from students, collect opinions, expectations and evaluations or offer varied entertainment.
 • Besides, you can easily show the results (only completed, only started participants)
 • The achievements of participants are saved in the database to be done later by professor for scientific and research purposes.
